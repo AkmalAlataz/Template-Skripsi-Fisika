@@ -1,0 +1,553 @@
+% =====================================================================
+% TEMPLATE TUGAS AKHIR FMIPA UGM - DRAF STARTER PROJECT
+% =====================================================================
+% Seluruh bagian naskah ditulis dalam satu file ini.
+%
+% PENTING:
+% 1. Template ini diadaptasi dari template asli menggunakan class yang diberikan pada panduan.
+% 2. Pastikan file ugmtesis.cls dan seluruh file pendukungnya tersedia.
+% 3. Ubah data identitas pada bagian A di bawah ini sebelum kompilasi.
+% 4. Kerangka Bab I-V di bawah merupakan kerangka awal. Cocokkan kembali
+%    dengan Buku Panduan Penulisan Tugas Akhir FMIPA UGM dan arahan pembimbing.
+% 5. Bab tutorial LaTeX diaktifkan untuk membantu pengguna mempelajari fitur.
+%    Matikan dengan mengubah \showlatexguidetrue menjadi \showlatexguidefalse
+%    sebelum menghasilkan naskah akhir untuk diserahkan.
+%
+% ---------------------------------------------------------------------
+% PILIH SATU DOCUMENT CLASS
+% ---------------------------------------------------------------------
+% Skripsi:
+\documentclass[skripsi]{ugmskripsi}
+%
+% Tesis:
+%\documentclass[tesis]{ugmtesis}
+%
+% Disertasi:
+% \documentclass[disertasi]{ugmdisertasi}
+%
+% Jangan mengaktifkan lebih dari satu perintah \documentclass.
+% Opsi setiap class harus mengikuti deklarasi pada file .cls masing-masing.
+
+% =====================================================================
+% PAKET TAMBAHAN
+% =====================================================================
+% Class template telah memuat graphicx, natbib, dan nomencl.
+% Karena itu, paket-paket tersebut tidak perlu dimuat ulang.
+
+\usepackage{amsmath,amssymb} % Persamaan, aligned, matriks, dan simbol matematika.
+\usepackage{booktabs}        % Garis tabel dengan kualitas tipografi yang baik.
+\usepackage[hidelinks]{hyperref} % Tautan dan referensi silang pada PDF.
+
+% ---------------------------------------------------------------------
+% PENGATURAN BAB TUTORIAL LATEX
+% ---------------------------------------------------------------------
+% true  : bab panduan fitur LaTeX ditampilkan pada PDF.
+% false : bab panduan fitur LaTeX tidak ditampilkan pada PDF.
+\newif\ifshowlatexguide
+\showlatexguidetrue
+
+% =====================================================================
+% A. DATA IDENTITAS TESIS
+% =====================================================================
+% Ganti seluruh teks contoh dengan data yang benar.
+% Perhatikan kapitalisasi judul dan format identitas sesuai panduan Fakultas.
+
+\titleind{TULISKAN JUDUL TESIS DALAM BAHASA INDONESIA}
+
+\titleeng{WRITE THE THESIS TITLE IN ENGLISH}
+
+\fullname{NAMA LENGKAP MAHASISWA}
+
+\idnum{NOMOR INDUK MAHASISWA}
+
+\examdate{Tanggal Bulan Tahun}
+
+\degree{Gelar Akademik}
+
+\yearsubmit{2026}
+
+\program{Fisika}
+
+\headprogram{Nama Ketua Program Studi}
+
+\dept{Fisika}
+
+\firstsupervisor{Nama Pembimbing Pertama}
+
+\secondsupervisor{Nama Pembimbing Kedua}
+
+\firstexaminer{Nama Penguji Pertama}
+
+\secondexaminer{Nama Penguji Kedua}
+
+\thirdexaminer{Nama Penguji Ketiga}
+
+% =====================================================================
+% MULAI DOKUMEN
+% =====================================================================
+\begin{document}
+
+% =====================================================================
+% B. BAGIAN AWAL TESIS
+% =====================================================================
+% Urutan perintah berikut mengikuti Template_Tesis.tex dari Fakultas.
+% Jangan menghapus perintah khusus class tanpa memeriksa dampaknya.
+
+% Sampul dan halaman judul
+\cover
+\titlepageind
+
+% Halaman pengesahan dan pernyataan
+\approvalpage
+\declarepage
+
+% ---------------------------------------------------------------------
+% Halaman persembahan (opsional, sesuaikan dengan panduan Fakultas)
+% ---------------------------------------------------------------------
+\acknowledment
+% Tuliskan persembahan secara singkat apabila bagian ini digunakan.
+\begin{flushright}
+\emph{Tuliskan kalimat persembahan di sini.}
+\end{flushright}
+
+% ---------------------------------------------------------------------
+% Halaman motto (opsional, sesuaikan dengan panduan Fakultas)
+% ---------------------------------------------------------------------
+\motto
+% Tuliskan motto atau kutipan yang ingin dicantumkan.
+\emph{Tuliskan motto di sini.}
+
+% ---------------------------------------------------------------------
+% Prakata
+% ---------------------------------------------------------------------
+\preface
+% Prakata berisi pengantar singkat mengenai penyusunan tesis.
+% Uraikan konteks penyusunan naskah dan ucapan terima kasih yang relevan.
+% Hindari memasukkan pembahasan ilmiah yang seharusnya berada pada bab utama.
+
+Tuliskan prakata tesis di sini. Sesuaikan isi dan panjang prakata dengan
+ketentuan pada panduan penulisan dan kebutuhan penulis.
+
+\begin{flushright}
+Yogyakarta, Tanggal Bulan Tahun\\
+Penulis
+\end{flushright}
+
+% ---------------------------------------------------------------------
+% Daftar isi dan daftar pendukung
+% ---------------------------------------------------------------------
+\tableofcontents
+\listoftables
+\listoffigures
+
+% Jika daftar lambang dan singkatan digunakan, hapus tanda komentar
+% pada perintah berikut. Entri lambang ditambahkan menggunakan \nomenclature.
+% \lambang
+
+% ---------------------------------------------------------------------
+% Intisari Bahasa Indonesia
+% ---------------------------------------------------------------------
+\begin{abstractind}
+% Intisari merangkum pokok penelitian secara ringkas.
+% Jelaskan latar belakang atau konteks, tujuan, metode, hasil utama,
+% dan simpulan. Ikuti batas panjang dan format kata kunci pada panduan.
+
+Tuliskan intisari tesis dalam bahasa Indonesia di sini.
+
+\bigskip
+Kata kunci: kata kunci pertama, kata kunci kedua, kata kunci ketiga.
+\end{abstractind}
+
+% ---------------------------------------------------------------------
+% Abstract in English
+% ---------------------------------------------------------------------
+\begin{abstracteng}
+% Abstract menyampaikan isi yang setara dengan intisari dalam bahasa Inggris.
+% Pastikan istilah teknis, tujuan, metode, hasil, dan simpulan konsisten.
+
+Write the thesis abstract in English here.
+
+\bigskip
+Keywords: first keyword, second keyword, third keyword.
+\end{abstracteng}
+
+% =====================================================================
+% C. BAGIAN UTAMA TESIS
+% =====================================================================
+% Kerangka Bab I-VI di bawah adalah kerangka awal yang lazim digunakan.
+% Susunan akhir, nama bab, dan subbab wajib disesuaikan dengan Buku Panduan
+% Penulisan Tugas Akhir FMIPA UGM yang berlaku serta arahan pembimbing.
+
+% ---------------------------------------------------------------------
+% BAB I. PENDAHULUAN
+% ---------------------------------------------------------------------
+\chapter{PENDAHULUAN}
+
+% Latar belakang menjelaskan konteks ilmiah, perkembangan topik,
+% kesenjangan penelitian, dan alasan penelitian perlu dilakukan.
+\section{Latar Belakang Masalah}
+Tuliskan latar belakang penelitian di sini. Mulailah dari konteks umum,
+kemudian arahkan pembahasan menuju masalah ilmiah yang lebih spesifik.
+Jelaskan kesenjangan pengetahuan atau persoalan yang belum terselesaikan,
+serta alasan penelitian ini penting untuk dilakukan.
+
+% Rumusan masalah menyatakan pertanyaan utama yang akan dijawab penelitian.
+\section{Perumusan Masalah}
+Tuliskan permasalahan penelitian dalam bentuk uraian atau pertanyaan yang
+jelas, spesifik, dan dapat dijawab melalui metode penelitian yang digunakan.
+
+% Tujuan harus berhubungan langsung dengan rumusan masalah.
+\section{Tujuan Penelitian}
+Jelaskan hasil atau capaian ilmiah yang ingin diperoleh. Susun tujuan secara
+spesifik dan selaras dengan setiap rumusan masalah.
+
+% Manfaat menjelaskan kontribusi teoretis maupun praktis bila relevan.
+\section{Manfaat Penelitian}
+Jelaskan kontribusi penelitian terhadap pengembangan ilmu, metode, data,
+atau penerapan yang relevan dengan bidang penelitian.
+
+% Sistematika penulisan menjelaskan susunan bab dan subbab, serta alur logis
+\section{Sistematika Penulisan}
+Jelaskan susunan bab dan subbab dalam tesis ini, serta alur logis dari pendahuluan hingga kesimpulan.
+Uraikan bagaimana setiap bagian saling terkait dan mendukung satu sama lain.
+
+% ---------------------------------------------------------------------
+% BAB II. TINJAUAN PUSTAKA
+% ---------------------------------------------------------------------
+\chapter{TINJAUAN PUSTAKA}
+
+% Tinjauan pustaka merangkum penelitian terdahulu yang relevan.
+\section{Tinjauan Pustaka}
+Bahas literatur dan hasil penelitian terdahulu yang berkaitan langsung dengan
+topik tesis. Susun pembahasan secara tematis atau kronologis, bukan sekadar
+menyalin ringkasan setiap sumber. Tunjukkan hubungan literatur tersebut
+dengan masalah penelitian yang dikaji.
+
+% ---------------------------------------------------------------------
+% BAB III. DASAR TEORI
+% ---------------------------------------------------------------------
+\chapter{DASAR TEORI}
+
+% Dasar teori menyajikan konsep, prinsip, dan persamaan yang digunakan.
+\section{Dasar Teori}
+Uraikan konsep dan teori yang diperlukan untuk memahami serta menyelesaikan
+permasalahan penelitian. Definisikan besaran, simbol, asumsi, dan notasi
+secara konsisten. Sertakan penurunan persamaan apabila diperlukan untuk
+menjelaskan metode atau model yang digunakan.
+
+% Subbab berikut dapat ditambah sesuai kebutuhan bidang penelitian.
+\subsection{Konsep atau Model Teoretis Pertama}
+Jelaskan konsep, model, atau prinsip pertama yang digunakan dalam penelitian.
+
+\subsection{Konsep atau Model Teoretis Kedua}
+Jelaskan konsep, model, atau prinsip berikutnya yang diperlukan.
+
+% Kerangka konsep atau hipotesis hanya digunakan jika relevan dengan desain.
+\section{Kerangka Pemikiran dan Hipotesis}
+Jelaskan hubungan antar-konsep atau alur logis yang menghubungkan teori,
+masalah penelitian, dan pendekatan penyelesaian. Tuliskan hipotesis apabila
+penelitian memang menggunakan hipotesis. Jika tidak relevan, bagian ini dapat
+diganti atau dihilangkan sesuai panduan dan arahan pembimbing.
+
+% ---------------------------------------------------------------------
+% BAB IV. METODE PENELITIAN
+% ---------------------------------------------------------------------
+\chapter{METODE PENELITIAN}
+
+% Jelaskan rancangan penelitian secara sistematis agar dapat ditelusuri.
+\section{Rancangan dan Pendekatan Penelitian}
+Jelaskan jenis penelitian dan pendekatan yang digunakan, misalnya teoretis,
+eksperimental, komputasional, atau gabungan, sesuai karakter penelitian.
+
+\section{Objek, Bahan, dan Peralatan Penelitian}
+Jelaskan objek yang diteliti, bahan yang digunakan, serta perangkat atau
+peralatan yang diperlukan. Untuk penelitian teoretis atau komputasional,
+uraikan sistem fisika, data, perangkat lunak, dan sumber daya komputasi yang
+relevan. Hilangkan unsur yang memang tidak digunakan.
+
+\section{Variabel dan Parameter Penelitian}
+Definisikan variabel, parameter, kondisi awal, kondisi batas, dan besaran
+lain yang digunakan. Sertakan satuan serta rentang nilai apabila relevan.
+
+\section{Prosedur atau Tahapan Penelitian}
+Uraikan tahapan penelitian secara berurutan. Setiap tahapan perlu menjelaskan
+apa yang dilakukan dan bagaimana tahapan tersebut menjawab tujuan penelitian.
+Diagram alir dapat digunakan untuk membantu menjelaskan prosedur.
+
+\section{Metode Pengolahan dan Analisis Data}
+Jelaskan metode analisis, teknik perhitungan, prosedur validasi, serta kriteria
+yang digunakan untuk menilai hasil. Tuliskan persamaan utama dan asumsi yang
+mendasari analisis apabila diperlukan.
+
+% ---------------------------------------------------------------------
+% BAB V. HASIL PENELITIAN DAN PEMBAHASAN
+% ---------------------------------------------------------------------
+\chapter{HASIL PENELITIAN DAN PEMBAHASAN}
+
+% Susun hasil berdasarkan tujuan atau rumusan masalah.
+\section{Hasil Penelitian}
+Sajikan hasil utama penelitian secara sistematis. Gunakan persamaan, tabel,
+gambar, grafik, atau diagram apabila membantu menjelaskan hasil. Setiap
+hasil yang disajikan perlu dirujuk dan dijelaskan dalam uraian.
+
+\section{Pembahasan}
+Interpretasikan hasil berdasarkan teori dan metode yang telah dijelaskan.
+Bandingkan dengan hasil penelitian terdahulu apabila relevan. Bahas makna
+fisis, kecenderungan, ketidakpastian, keterbatasan, dan implikasi hasil
+sesuai ruang lingkup penelitian.
+
+% Tambahkan section/subsection berdasarkan kelompok hasil yang diperoleh.
+\section{Pembahasan Tambahan (Jika Diperlukan)}
+Gunakan bagian ini apabila terdapat hasil atau analisis lain yang belum
+tercakup pada bagian sebelumnya. Hapus bagian ini jika tidak diperlukan.
+
+% ---------------------------------------------------------------------
+% BAB VI. KESIMPULAN DAN SARAN
+% ---------------------------------------------------------------------
+\chapter{KESIMPULAN DAN SARAN}
+
+% Kesimpulan menjawab tujuan/rumusan masalah berdasarkan hasil.
+\section{Kesimpulan}
+Tuliskan kesimpulan utama secara ringkas, jelas, dan langsung menjawab tujuan
+atau rumusan masalah. Kesimpulan harus didasarkan pada hasil penelitian yang
+telah dibahas, bukan memuat data atau analisis baru.
+
+% Saran berisi tindak lanjut yang dapat dilakukan.
+\section{Saran}
+Tuliskan saran untuk pengembangan penelitian, perbaikan metode, atau pekerjaan
+lanjutan. Pastikan saran berangkat dari hasil dan keterbatasan penelitian.
+
+% =====================================================================
+% D. BAB TAMBAHAN: PANDUAN PENGGUNAAN FITUR LATEX
+% =====================================================================
+% Bab ini adalah bahan pembelajaran di dalam template, bukan bagian standar
+% isi tesis. Nonaktifkan sebelum naskah akhir diserahkan dengan mengubah
+% \showlatexguidetrue menjadi \showlatexguidefalse di bagian preamble.
+
+\ifshowlatexguide
+\chapter{PANDUAN FITUR LaTeX}
+
+Bab ini memperkenalkan perintah LaTeX yang umum digunakan ketika menulis
+naskah ilmiah. Contoh-contoh berikut dapat disalin dan disesuaikan pada bab
+penelitian. Bab panduan ini harus dinonaktifkan atau dihapus sebelum naskah
+akhir diserahkan apabila tidak termasuk struktur yang ditetapkan Fakultas.
+
+\section{Struktur Bab, Subbab, dan Paragraf}
+Gunakan perintah \verb|\chapter| untuk membuat bab, \verb|\section| untuk
+subbab tingkat pertama, dan \verb|\subsection| untuk bagian yang lebih rinci.
+Nomor dan format judul akan diatur oleh document class.
+
+Contoh penulisan:
+\begin{verbatim}
+\chapter{JUDUL BAB}
+\section{Judul Subbab}
+\subsection{Judul Bagian}
+Tuliskan uraian paragraf di sini.
+\end{verbatim}
+
+\section{Penulisan Persamaan}
+Persamaan singkat dapat ditulis di dalam paragraf, misalnya $E=mc^2$.
+Untuk persamaan yang perlu diberi nomor dan dirujuk kembali, gunakan
+lingkungan \texttt{equation}.
+
+\begin{equation}
+E = mc^2,
+\label{eq:contoh-einstein}
+\end{equation}
+
+Persamaan multibaris dapat ditulis dengan lingkungan \texttt{align}.
+Paket \texttt{amsmath} telah dipanggil pada preamble.
+
+\begin{align}
+F &= ma, \label{eq:hukum-newton}\\
+E &= mc^2. \label{eq:energi-massa}
+\end{align}
+
+Rujuk persamaan menggunakan \verb|\ref| atau \verb|\eqref|, misalnya
+Persamaan~\eqref{eq:contoh-einstein}. Gunakan \verb|\label| pada persamaan
+agar nomor diperbarui secara otomatis.
+
+Contoh kode:
+\begin{verbatim}
+\begin{equation}
+    E = mc^2
+    \label{eq:energi}
+\end{equation}
+
+Persamaan~\eqref{eq:energi} menunjukkan ...
+\end{verbatim}
+
+\section{Memasukkan Gambar}
+Simpan gambar pada folder \texttt{figure/} di dalam direktori proyek.
+Gunakan nama file sederhana dan panggil gambar melalui path relatif.
+Class template telah memuat paket \texttt{graphicx}.
+
+Contoh berikut menampilkan gambar apabila file contoh tersedia. Jika belum,
+template menampilkan kotak pengganti sehingga dokumen tetap dapat dikompilasi.
+
+\begin{figure}[htbp]
+    \centering
+    \IfFileExists{figure/contoh-gambar.png}{%
+        \includegraphics[width=0.70\textwidth]{figure/contoh-gambar.png}%
+    }{%
+        \fbox{\parbox[c][35mm][c]{0.70\textwidth}{\centering
+        Contoh gambar belum tersedia}}%
+    }
+    \caption{Contoh penyisipan gambar.}
+    \label{fig:contoh-gambar}
+\end{figure}
+
+Rujuk gambar di dalam paragraf menggunakan perintah \verb|\ref|, seperti
+Gambar~\ref{fig:contoh-gambar}. Jangan menuliskan nomor gambar secara manual.
+
+Contoh kode untuk gambar lain:
+\begin{verbatim}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figure/nama-gambar.png}
+    \caption{Keterangan gambar.}
+    \label{fig:nama-gambar}
+\end{figure}
+\end{verbatim}
+
+\section{Membuat Tabel}
+Gunakan lingkungan \texttt{table} untuk memberi keterangan dan nomor tabel,
+serta \texttt{tabular} untuk menyusun baris dan kolom. Contoh berikut
+menggunakan paket \texttt{booktabs}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Contoh penyajian data dalam tabel.}
+    \label{tab:contoh-data}
+    \begin{tabular}{lcc}
+        \toprule
+        Besaran & Nilai 1 & Nilai 2 \\
+        \midrule
+        Besaran A & 1.25 & 2.50 \\
+        Besaran B & 3.75 & 4.00 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Rujuk tabel menggunakan Tabel~\ref{tab:contoh-data}. Letakkan \verb|\caption|
+dan \verb|\label| di dalam lingkungan \texttt{table}; tempatkan label
+setelah caption agar nomor yang dirujuk sesuai.
+
+\section{Membuat Daftar dan Poin}
+Gunakan \texttt{itemize} untuk daftar tanpa nomor dan \texttt{enumerate}
+untuk daftar bernomor.
+
+\begin{itemize}
+    \item Poin pertama.
+    \item Poin kedua.
+\end{itemize}
+
+\begin{enumerate}
+    \item Langkah pertama.
+    \item Langkah kedua.
+\end{enumerate}
+
+\section{Sitasi dan Daftar Pustaka}
+Class template memuat paket \texttt{natbib} dengan gaya bibliografi
+\texttt{apalike}. Database referensi disimpan dalam \texttt{reference.bib}.
+Setiap entri memiliki citation key untuk dipanggil dalam sitasi.
+
+Dua perintah sitasi yang umum adalah:
+\begin{itemize}
+    \item \verb|\citet{key}| untuk sitasi naratif, misalnya nama penulis menjadi
+    bagian dari kalimat.
+    \item \verb|\citep{key}| untuk sitasi di dalam tanda kurung.
+\end{itemize}
+
+Ganti \texttt{key} dengan citation key yang benar-benar tersedia di dalam
+\texttt{reference.bib}. Contoh bentuk kode:
+\begin{verbatim}
+Menurut \citet{key-referensi}, ...
+Hasil tersebut juga telah dibahas sebelumnya \citep{key-referensi}.
+\end{verbatim}
+
+Daftar pustaka dibuat dari database BibTeX melalui perintah berikut pada
+bagian akhir dokumen:
+\begin{verbatim}
+\bibliography{reference}
+\end{verbatim}
+
+Jangan menuliskan ekstensi \texttt{.bib} pada argumen \verb|\bibliography|.
+Pastikan proses kompilasi menjalankan BibTeX ketika terdapat perubahan sitasi.
+
+\section{Referensi Silang}
+Gunakan \verb|\label| untuk memberi penanda pada bab, subbab, gambar, tabel,
+dan persamaan. Panggil penanda tersebut menggunakan \verb|\ref| atau
+\verb|\eqref| untuk persamaan.
+
+Contoh:
+\begin{verbatim}
+\section{Model Penelitian}
+\label{sec:model}
+
+Rujuk Bagian~\ref{sec:model}.
+\end{verbatim}
+
+Kompilasi ulang diperlukan agar nomor referensi silang diperbarui.
+
+\section{Catatan Kaki}
+Catatan kaki dapat ditambahkan menggunakan perintah \verb|\footnote|.
+Contoh kalimat dengan catatan kaki.\footnote{Tuliskan keterangan tambahan
+yang relevan dan tidak perlu dimasukkan ke dalam uraian utama.}
+
+\section{Lambang dan Singkatan}
+Class template memuat paket \texttt{nomencl}. Tambahkan entri menggunakan
+perintah \verb|\nomenclature|, kemudian aktifkan perintah \verb|\lambang|
+pada bagian awal dokumen apabila daftar lambang digunakan.
+
+Contoh:
+\begin{verbatim}
+\nomenclature{$c$}{Kecepatan cahaya di ruang hampa}
+\nomenclature{$m$}{Massa benda}
+\end{verbatim}
+
+Pembuatan daftar lambang memerlukan tahapan pemrosesan indeks nomenklatur
+selain kompilasi LaTeX biasa. Ikuti konfigurasi dan perintah kompilasi yang
+berlaku pada instalasi LaTeX yang digunakan.
+
+\section{Lampiran}
+Gunakan \verb|\appendix| sebelum membuat bab lampiran. Setelah perintah ini,
+penomoran bab akan mengikuti format lampiran yang ditentukan oleh class.
+
+Contoh:
+\begin{verbatim}
+\appendix
+\chapter{DATA TAMBAHAN}
+Tuliskan data atau informasi pendukung di sini.
+\end{verbatim}
+
+\section{Kompilasi dan Pembaruan Dokumen}
+Setelah menambahkan gambar, persamaan, tabel, atau sitasi, lakukan kompilasi
+ulang melalui LaTeX Workshop. Beberapa elemen seperti daftar isi, referensi
+silang, dan daftar pustaka memerlukan beberapa tahap kompilasi agar hasilnya
+terbarui. Periksa panel Output apabila proses kompilasi menghasilkan pesan
+kesalahan.
+\fi
+
+% =====================================================================
+% E. DAFTAR PUSTAKA
+% =====================================================================
+% Class tesis dari Fakultas pada template asli mengatur gaya apalike.
+% File database yang digunakan pada starter project bernama reference.bib.
+\bibliography{reference}
+
+% =====================================================================
+% F. LAMPIRAN
+% =====================================================================
+% Hapus contoh ini jika tidak ada lampiran. Tambahkan \chapter untuk setiap
+% lampiran baru; seluruh lampiran tetap ditulis dalam main.tex.
+\appendix
+\chapter{JUDUL LAMPIRAN}
+Tuliskan materi pendukung yang diperlukan, misalnya penurunan matematis,
+data tambahan, spesifikasi alat, atau kode yang relevan. Sesuaikan jenis
+lampiran dengan kebutuhan penelitian dan ketentuan panduan Fakultas.
+
+% =====================================================================
+% AKHIR DOKUMEN
+% =====================================================================
+\end{document}
